@@ -1,0 +1,874 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* .................................. Page Loader Start ..................................  */
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .................................. Page Loader Start ..................................  */
+
+
+/* .................................. Page Loader After Website Loader Start .................................. */
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s;
+  top: 0;
+}
+
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0
+  }
+
+  to {
+    bottom: 0px;
+    opacity: 1
+  }
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1
+  }
+}
+
+#myDiv {
+  display: none;
+}
+
+/* .................................. Page Loader After Website Loader End .................................. */
+
+
+/* ................................... Heading Start ................................... */
+
+.h1 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 40px;
+  color: rgb(32, 32, 32);
+}
+
+/* ................................... Heading End ................................... */
+
+
+/* ................................... Paragraph Start ................................... */
+
+.pLorem {
+  margin: 10px;
+  margin-left: 20px;
+}
+
+@media (max-width:767px) {
+  .wrapper-log .headline h1 {
+    font-size: 22px;
+    line-height: 25px;
+  }
+}
+
+/* ................................... Paragraph End ................................... */
+
+
+/* ................................... Navbar Start ................................... */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+  background: #171c24;
+  position: sticky;
+  width: 100%;
+}
+
+.wrapper nav {
+  position: relative;
+  display: flex;
+  max-width: calc(100% - 200px);
+  margin: 0 auto;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .content {
+  display: flex;
+  align-items: center;
+}
+
+nav .content .links {
+  margin-left: 80px;
+  display: flex;
+}
+
+.content .logo a {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.content .links li {
+  list-style: none;
+  line-height: 70px;
+}
+
+.content .links li a,
+.content .links li label {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 17px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.content .links li label {
+  display: none;
+}
+
+.content .links li a:hover,
+.content .links li label:hover {
+  background: #323c4e;
+}
+
+.wrapper .search-icon,
+.wrapper .menu-icon {
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+}
+
+.wrapper .menu-icon {
+  display: none;
+}
+
+.wrapper #show-search:checked~.search-icon i::before {
+  content: "\f00d";
+}
+
+.wrapper .search-box {
+  position: absolute;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.wrapper #show-search:checked~.search-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-box input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #fff;
+  background: #171c24;
+  padding: 0 100px 0 15px;
+}
+
+.search-box input::placeholder {
+  color: #f2f2f2;
+}
+
+.search-box .go-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 60px;
+  width: 70px;
+  background: #171c24;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.wrapper input[type="checkbox"] {
+  display: none;
+}
+
+/* Dropdown Menu code start */
+.content .links ul {
+  position: absolute;
+  background: #171c24;
+  top: 80px;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.content .links li:hover>ul {
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+.content .links ul li a {
+  display: block;
+  width: 100%;
+  line-height: 30px;
+  border-radius: 0px !important;
+}
+
+.content .links ul ul {
+  position: absolute;
+  top: 0;
+  right: calc(-100% + 8px);
+}
+
+.content .links ul li {
+  position: relative;
+}
+
+.content .links ul li:hover ul {
+  top: 0;
+}
+
+.dummy-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  z-index: -1;
+  padding: 0 20px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.dummy-text h2 {
+  font-size: 45px;
+  margin: 5px 0;
+}
+
+.img {
+  height: 35px;
+  width: 40px;
+}
+
+.logo {
+  margin-top: 12px;
+}
+
+.navbar-bay{
+  background: rgb(145, 17, 17);
+}
+
+/* Responsive code start */
+@media screen and (max-width: 1250px) {
+  .wrapper nav {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  nav .content .links {
+    margin-left: 30px;
+  }
+
+  .content .links li a {
+    padding: 8px 13px;
+  }
+
+  .wrapper .search-box {
+    max-width: calc(100% - 100px);
+  }
+
+  .wrapper .search-box input {
+    padding: 0 100px 0 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .menu-icon {
+    display: block;
+  }
+
+  .wrapper #show-menu:checked~.menu-icon i::before {
+    content: "\f00d";
+  }
+
+  nav .content .links {
+    display: inline-table;
+    position: absolute;
+    background: #14181f;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left: 0;
+    max-width: 350px;
+    overflow-y: auto;
+    padding-bottom: 100px;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  nav #show-menu:checked~.content .links {
+    left: 0%;
+  }
+
+  .content .links li {
+    margin: 15px 20px;
+  }
+
+  .content .links li a,
+  .content .links li label {
+    line-height: 40px;
+    font-size: 20px;
+    display: block;
+    padding: 8px 18px;
+    cursor: pointer;
+  }
+
+  .content .links li a.desktop-link {
+    display: none;
+  }
+
+  /* dropdown responsive code start */
+  .content .links ul,
+  .content .links ul ul {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    background: none;
+    max-height: 0px;
+    overflow: hidden;
+  }
+
+  .content .links #show-features:checked~ul,
+  .content .links #show-services:checked~ul,
+  .content .links #show-items:checked~ul {
+    max-height: 100vh;
+  }
+
+  .content .links ul li {
+    margin: 7px 20px;
+  }
+
+  .content .links ul li a {
+    font-size: 18px;
+    line-height: 30px;
+    border-radius: 5px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper nav {
+    padding: 0 10px;
+  }
+
+  .content .logo a {
+    font-size: 27px;
+  }
+
+  .wrapper .search-box {
+    max-width: calc(100% - 70px);
+  }
+
+  .wrapper .search-box .go-icon {
+    width: 30px;
+    right: 0;
+  }
+
+  .wrapper .search-box input {
+    padding-right: 30px;
+  }
+}
+
+/* ................................... Navbar End ................................... */
+
+
+/* ................................... Footer Start ................................... */
+
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+/* The footer is fixed to the bottom of the page */
+
+footer {
+  /* position: fixed; */
+  bottom: 0;
+}
+
+@media (max-height:800px) {
+  footer {
+    position: static;
+  }
+
+  header {
+    padding-top: 40px;
+  }
+}
+
+
+.footer-distributed {
+  background-color: #2c292f;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 50px 50px 60px 50px;
+  margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+  width: 30%;
+}
+
+.footer-distributed h3 {
+  color: #ffffff;
+  font: normal 36px 'Cookie', cursive;
+  margin: 0;
+}
+
+/* The company logo */
+
+.footer-distributed .footer-left img {
+  width: 30%;
+}
+
+.footer-distributed h3 span {
+  color: #e0ac1c;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+  color: #ffffff;
+  margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+  color: #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center {
+  width: 35%;
+}
+
+
+.footer-distributed .footer-center i {
+  background-color: #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+  color: #e0ac1c;
+  text-decoration: none;
+  ;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+  width: 30%;
+}
+
+.footer-distributed .footer-company-about {
+  line-height: 20px;
+  color: #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+  display: block;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* Here is the code for Responsive Footer */
+/* You can remove below code if you don't want Footer to be responsive */
+
+
+@media (max-width: 880px) {
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i {
+    margin-left: 0;
+  }
+
+}
+
+/* ................................... Footer End ................................... */
+
+
+/* ................................... Cart Start ................................... */
+
+main {
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
+  grid-gap: 40px;
+  padding: 60px 0;
+}
+
+.text--medium {
+  font-family: arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 20px;
+  color: #ecf0f1;
+}
+
+.cards {
+  grid-column: 2 / span 12;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(auto, 60px));
+  grid-gap: 40px;
+}
+
+.card {
+  grid-column-end: span 4;
+  display: flex;
+  flex-direction: column;
+  background-color: #39393b;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  z-index: -2;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+}
+
+.card__image-container {
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card__image-container img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.card__content {
+  padding: 20px;
+}
+
+.card__title {
+  margin-bottom: 20px;
+}
+
+.card__info {
+  display: flex;
+  align-self: end;
+  align-items: center;
+}
+
+.card__price {
+  margin-left: auto;
+  padding: 5px 20px;
+  background-color: #303032;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width:1000px) {
+  .card {
+    grid-column-end: span 6;
+  }
+}
+
+@media only screen and (max-width:700px) {
+  main {
+    grid-gap: 20px;
+  }
+
+  .card {
+    grid-column-end: span 12;
+  }
+}
+
+@media only screen and (max-width:500px) {
+  main {
+    grid-template-columns: 10px repeat(6, 1fr) 10px;
+    grid-gap: 10px;
+  }
+
+  .cards {
+    grid-column: 2 / span 6;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+  }
+
+  .card {
+    grid-column-end: span 6;
+  }
+}
+
+/* ................................... Cart End ................................... */
+
+
+/* .................................. Image slide Start ..................................  */
+
+.slide-img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.width {
+  width: 100%;
+}
+
+.h2 {
+  text-align: center;
+}
+
+@media (max-width: 570px) {
+  .caption-container {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+  }
+
+  .caption {
+    font-size: smaller;
+  }
+}
+
+/* .................................. Image slide End ..................................  */
